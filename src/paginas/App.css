@@ -1,5 +1,79 @@
 *{
   	box-sizing: border-box;
   	margin: 0px;
-  	padding: 0px;
+	padding: 0px;
+}
+/* Pesquisa */
+#pesquisa > h1{
+	display: block;
+	text-align: center;
+	font-size:2em; 
+}
+
+#formulario{
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	margin: auto;
+	width: 30%;
+	text-align: center;
+}
+
+#formulario > *{
+	margin-top:10px;
+	font-size: 1.2em;
+}
+
+#formulario input[type=text]{
+	padding-bottom: 5px;
+	border:none;
+	border-bottom: 1.5px solid black;
+}
+
+#formulario input[type=submit]{
+	border:1.5px solid black;
+	margin-top: 10px!important;
+	width: 45%;
+	margin: auto;
+}
+
+#formulario input[type=submit]:hover{
+	background-color: rgb(84, 119, 121);
+	color:white;
+}
+
+#formulario input[type=submit]:active{
+	background-color: rgb(170, 221, 221);
+}
+
+/* Resultado */
+#tabela-repositorios{
+	width: 100%;
+	margin: 20px auto auto auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+#tabela-repositorios > thead td{
+	padding: 3px;
+	font-size: 1.2em;
+	font-weight: 700;
+	background-color: rgb(84, 119, 121);
+	color: azure;
+}
+
+#tabela-repositorios-resultados td{
+	padding: 10px;
+}
+
+#tabela-repositorios-resultados > tr{
+	background-color: rgb(170, 221, 221);
+}
+
+#tabela-repositorios-resultados > tr:nth-child(even){
+	background-color: rgb(224, 247, 247);
+}
+
+#tabela-repositorios-resultados > tr a{
+	text-decoration: none;
 }

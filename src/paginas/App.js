@@ -36,7 +36,7 @@ class App extends React.Component {
 
     buscarRadio(event){
         this.setState(
-            {quant:event.target.value}
+            {quant:parseInt(event.target.value)}
         );
     }
 
@@ -45,9 +45,9 @@ class App extends React.Component {
             <div id="main">
                 <section id="pesquisa">
                     <h1>Buscar informações</h1>
-                    <form action="" method="get" onSubmit={this.informacoesRepositorio}>
+                    <form method="get" onSubmit={this.informacoesRepositorio} id="formulario">
                         <label htmlFor="proprietario-nome">Informe o nome do proprietario</label>
-                        <input type="text"  placeholder="Nome do proprietario" id="proprietario-nome" onChange={this.buscarValores}/>
+                        <input maxLength="400" type="text"  placeholder="Nome do proprietario" id="proprietario-nome" onChange={this.buscarValores}/>
                         {/* <div id="filtragem">
                             <label htmlFor="">Visualizar</label>
                             <label htmlFor="dez-primeiros">Dez primeiros</label>
@@ -61,7 +61,7 @@ class App extends React.Component {
                     </form>
                 </section>
                 <div id="resultados">
-                    <table>
+                    <table id="tabela-repositorios">
                         <thead>
                             <tr>
                                 <td>#</td>
@@ -71,14 +71,14 @@ class App extends React.Component {
                                 <td>Tamanho</td>
                             </tr>
                         </thead>
-                        <tbody id="tabela-repositorios">{
+                        <tbody id="tabela-repositorios-resultados">{
                             this.state.repositorios.map((i)=> {
                                 return (
                                     <tr key={i.id}>
                                         <td>{i.id}</td>
-                                        <td>{i.name}</td>
+                                        <td><a href={i.html_url} rel="noopener noreferrer" target="_blank">{i.name}</a></td>
                                         <td>{i.description}</td>
-                                        <td>{i.created_at}</td>
+                                        <td>{i.created_at.split('T')[0]}</td>
                                         <td>{i.size} Kb</td>
                                     </tr>
                                 );
