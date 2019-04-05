@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>   
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main">
+        <section id="pesquisa">
+            <h1>Buscar informações</h1>
+            <form method="get" id="formulario">
+                <label htmlFor="proprietario-nome">Informe o nome do proprietario</label>
+                <input maxLength="400" type="text" placeholder="Nome do proprietario" id="proprietario-nome"/>
+                <input type="submit" value="Procurar" />
+            </form>
+        </section>
+        <div id="resultados">
+            <table id="tabela-repositorios">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Nome</td>
+                        <td>Descrição</td>
+                        <td>Data de criação</td>
+                        <td>Tamanho</td>
+                    </tr>
+                </thead>
+                <tbody id="tabela-repositorios-resultados">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="index.js"></script><!---->
+</body>
+</html>
