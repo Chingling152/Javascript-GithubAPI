@@ -21,8 +21,10 @@ function informacoesRepositorio() {
 }
 
 function gerarTabela(data) {
+    let tabela = document.querySelector('#tabela-repositorios-resultados');
+    tabela.innerHTML = '';
     data.map(i =>
-        document.querySelector('#tabela-repositorios-resultados').appendChild(gerarLinha(i))
+        tabela.appendChild(gerarLinha(i))
     );
 
 }
